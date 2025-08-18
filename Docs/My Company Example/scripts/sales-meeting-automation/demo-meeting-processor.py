@@ -33,14 +33,12 @@ DEMO_MEETING_ID = "01K1ZF3FGSY686JHZV0QSFG57K"
 DEMO_MEETING_URL = "https://app.fireflies.ai/view/Elly-Analytics-XS-discovery-call::01K1ZF3FGSY686JHZV0QSFG57K"
 DEMO_CLIENT_NAME = "XS Discovery Call"
 
-# === DEMO MODE CONFIGURATION ===
-# This script runs in DEMO MODE by default - no real API keys required!
-DEMO_MODE = True  # Always True for demo workspaces
-
-# API Configuration (not used in demo mode)
-API_TOKEN = os.getenv("FIREFLIES_API_TOKEN", "demo_token_not_required")
+# Fireflies.ai API Configuration
+API_TOKEN = os.getenv("FIREFLIES_API_TOKEN", "your_fireflies_token_here")
 API_URL = "https://api.fireflies.ai/graphql"
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "demo_key_not_required")
+
+# OpenAI Configuration
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "your_openai_key_here")
 
 # Demo sales team emails (anonymized)
 SALES_EMAILS = {
@@ -203,8 +201,8 @@ summary for internal team use.
 def fetch_meeting_transcript():
     """Fetch the demo meeting transcript from Fireflies.ai"""
     
-    if DEMO_MODE or API_TOKEN in ["your_fireflies_token_here", "demo_token_not_required"]:
-        print("🎯 DEMO MODE: Using mock transcript data - no real API calls needed!")
+    if API_TOKEN == "your_fireflies_token_here":
+        print("🔧 Demo Mode: Using mock transcript data")
         return get_mock_transcript()
     
     query = """
@@ -299,8 +297,8 @@ def create_full_transcript_text(transcript_data):
 def analyze_with_ai(transcript_text, template_name):
     """Analyze transcript using OpenAI with specified template"""
     
-    if DEMO_MODE or OPENAI_API_KEY in ["your_openai_key_here", "demo_key_not_required"]:
-        print("🎯 DEMO MODE: Using mock AI analysis - no real API calls needed!")
+    if OPENAI_API_KEY == "your_openai_key_here":
+        print("🔧 Demo Mode: Using mock AI analysis")
         return get_mock_analysis(template_name)
     
     try:
@@ -413,41 +411,63 @@ def get_mock_analysis(template_name):
 Demo scheduled for Jan 22, prepare custom ROI analysis
 """
 
-# Demo folder configuration - always overwrite for clean demo experience
-DEMO_FOLDER_NAME = "XS Discovery Call Demo"
+# Global variable to track current session
+_current_session_folder = None
 
-def get_demo_folder():
-    """
-    Get the fixed demo folder name for consistent demo experience.
-    Files are overwritten on each run for clean presentation.
-    """
-    return DEMO_FOLDER_NAME
+def get_next_version_folder():
+    """Get next version folder for this session"""
+    global _current_session_folder
+    
+    if _current_session_folder is None:
+        # Check existing version folders
+        existing_folders = [d for d in os.listdir(OUTPUT_DIR) 
+                           if os.path.isdir(os.path.join(OUTPUT_DIR, d)) 
+                           and d.startswith(f"{DEMO_CLIENT_NAME} v")]
+        
+        if not existing_folders:
+            version = 1
+        else:
+            # Extract version numbers
+            versions = []
+            for folder in existing_folders:
+                try:
+                    version_part = folder.split(" v")[-1]
+                    version_num = int(version_part)
+                    versions.append(version_num)
+                except ValueError:
+                    continue
+            
+            version = max(versions) + 1 if versions else 1
+        
+        _current_session_folder = f"{DEMO_CLIENT_NAME} v{version:02d}"
+    
+    return _current_session_folder
 
 def save_analysis_to_file(analysis, template_name):
-    """Save analysis to file in demo directory (overwrites for clean demo)"""
+    """Save analysis to file in versioned session directory"""
     
-    # Get demo folder (always the same for consistent demo)
-    demo_folder = get_demo_folder()
-    demo_output_dir = os.path.join(OUTPUT_DIR, demo_folder)
-    os.makedirs(demo_output_dir, exist_ok=True)
+    # Get versioned folder for this session
+    session_folder = get_next_version_folder()
+    session_output_dir = os.path.join(OUTPUT_DIR, session_folder)
+    os.makedirs(session_output_dir, exist_ok=True)
     
-    # English filenames based on template type
+    # Proper Russian filenames based on template type
     if template_name == "prompt_internal":
         filename = "Short Version for Slack.md"
     elif template_name == "prompt_notion":
-        filename = "Notion Extended Version.md"
+        filename = "Notion расширенная Version.md"
     else:
         filename = f"{template_name}.md"
     
-    filepath = os.path.join(demo_output_dir, filename)
+    filepath = os.path.join(session_output_dir, filename)
     
-    # Demo version for metadata
-    demo_version = "Demo"
+    # Extract version number for metadata
+    version = session_folder.split(" v")[-1]
     
     # Create content with metadata
     content = f"""# Automated Sales Meeting Analysis
 **Client:** {DEMO_CLIENT_NAME}  
-**Version:** {demo_version}  
+**Version:** v{version}  
 **Generated:** {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}  
 **Workspace:** {WORKSPACE_NAME}  
 **Meeting ID:** {DEMO_MEETING_ID}  
@@ -461,7 +481,7 @@ def save_analysis_to_file(analysis, template_name):
 ---
 
 *This analysis was generated automatically using the Sales Meeting Processing system.*
-*Session: `{demo_folder}`*
+*Session: `{session_folder}`*
 *File: `{filename}`*
 """
     
@@ -470,7 +490,7 @@ def save_analysis_to_file(analysis, template_name):
         f.write(content)
     
     # Return filepath and session info for Notion integration
-    return filepath, demo_folder, demo_version
+    return filepath, session_folder, version
 
 def send_to_notion(notion_analysis_file):
     """Send analysis to Notion using the notion integration script"""
@@ -495,8 +515,8 @@ def send_to_notion(notion_analysis_file):
             
             # Generate mock Notion page details
             mock_page_id = f"abc123def456{session_version}"
-            mock_page_url = f"https://www.notion.so/ellyanalytics/XS-Discovery-Call-Demo-{mock_page_id}"
-            page_title = f"XS Discovery Call Demo"
+            mock_page_url = f"https://www.notion.so/ellyanalytics/XS-Discovery-Call-Notion-{session_version}-{mock_page_id}"
+            page_title = f"XS Discovery Call Notion {session_version}"
             
             print(f"✅ Mock Notion page created successfully!")
             print(f"📄 Page Title: {page_title}")
