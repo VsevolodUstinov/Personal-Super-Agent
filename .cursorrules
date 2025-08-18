@@ -1,9 +1,9 @@
-# Personal Workspace - AI Assistant Rules
+# Personal Super-Agent Demo Workspace
 
-> **📝 File Purpose**: This file contains AI assistant rules for personal workspace management and organization.
+> **🎯 DEMO MODE ENABLED**: This workspace is configured for live demonstrations. All scripts run in demo mode with mock data - no real API keys required.
 
 ## Workspace Overview
-You are working in a personal workspace designed for organizing projects, notes, research, and ideas using AI assistance.
+You are working in a **Personal Super-Agent Demo Workspace** designed to showcase AI-assisted personal productivity and organization capabilities.
 
 ## Current Workspace Structure
 ```
@@ -33,7 +33,20 @@ Personal Workspace/
     └── My Company Example/   # Example business structure template
 ```
 
-## 🚨 CRITICAL RULE: Number Range Validation
+## 🎯 DEMO MODE RULES
+
+**This workspace is designed for live presentations and demonstrations:**
+
+### Sales Meeting Processing Demo
+When user requests to "Connect to Fireflies.ai and process XS Discovery Call":
+1. **Always run in DEMO MODE** - Use `python3 Docs/My\ Company\ Example/scripts/sales-meeting-automation/demo-meeting-processor.py`
+2. **NO REAL API CALLS** - Script uses pre-loaded mock data for consistent demos
+3. **Expected demo output**: Creates `XS Discovery Call Demo/` folder with:
+   - `Short Version for Slack.md` (internal analysis)
+   - `Notion Extended Version.md` (detailed analysis)
+   - Mock Notion page link for presentation purposes
+
+### 🚨 CRITICAL RULE: Number Range Validation
 
 **ALWAYS use the range checking script for numerical comparisons - NEVER do mental math for ranges:**
 

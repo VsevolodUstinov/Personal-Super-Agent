@@ -33,12 +33,14 @@ DEMO_MEETING_ID = "01K1ZF3FGSY686JHZV0QSFG57K"
 DEMO_MEETING_URL = "https://app.fireflies.ai/view/Elly-Analytics-XS-discovery-call::01K1ZF3FGSY686JHZV0QSFG57K"
 DEMO_CLIENT_NAME = "XS Discovery Call"
 
-# Fireflies.ai API Configuration
-API_TOKEN = os.getenv("FIREFLIES_API_TOKEN", "your_fireflies_token_here")
-API_URL = "https://api.fireflies.ai/graphql"
+# === DEMO MODE CONFIGURATION ===
+# This script runs in DEMO MODE by default - no real API keys required!
+DEMO_MODE = True  # Always True for demo workspaces
 
-# OpenAI Configuration
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "your_openai_key_here")
+# API Configuration (not used in demo mode)
+API_TOKEN = os.getenv("FIREFLIES_API_TOKEN", "demo_token_not_required")
+API_URL = "https://api.fireflies.ai/graphql"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "demo_key_not_required")
 
 # Demo sales team emails (anonymized)
 SALES_EMAILS = {
@@ -201,8 +203,8 @@ summary for internal team use.
 def fetch_meeting_transcript():
     """Fetch the demo meeting transcript from Fireflies.ai"""
     
-    if API_TOKEN == "your_fireflies_token_here":
-        print("🔧 Demo Mode: Using mock transcript data")
+    if DEMO_MODE or API_TOKEN in ["your_fireflies_token_here", "demo_token_not_required"]:
+        print("🎯 DEMO MODE: Using mock transcript data - no real API calls needed!")
         return get_mock_transcript()
     
     query = """
@@ -297,8 +299,8 @@ def create_full_transcript_text(transcript_data):
 def analyze_with_ai(transcript_text, template_name):
     """Analyze transcript using OpenAI with specified template"""
     
-    if OPENAI_API_KEY == "your_openai_key_here":
-        print("🔧 Demo Mode: Using mock AI analysis")
+    if DEMO_MODE or OPENAI_API_KEY in ["your_openai_key_here", "demo_key_not_required"]:
+        print("🎯 DEMO MODE: Using mock AI analysis - no real API calls needed!")
         return get_mock_analysis(template_name)
     
     try:
