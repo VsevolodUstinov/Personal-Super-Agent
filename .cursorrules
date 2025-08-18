@@ -1,9 +1,9 @@
-# Personal Super-Agent Demo Workspace
+# Personal Workspace - AI Assistant Rules
 
-> **🎯 DEMO MODE ENABLED**: This workspace is configured for live demonstrations. All scripts run in demo mode with mock data - no real API keys required.
+> **📝 File Purpose**: This file contains AI assistant rules for personal workspace management and organization.
 
 ## Workspace Overview
-You are working in a **Personal Super-Agent Demo Workspace** designed to showcase AI-assisted personal productivity and organization capabilities.
+You are working in a personal workspace designed for organizing projects, notes, research, and ideas using AI assistance.
 
 ## Current Workspace Structure
 ```
@@ -33,20 +33,7 @@ Personal Workspace/
     └── My Company Example/   # Example business structure template
 ```
 
-## 🎯 DEMO MODE RULES
-
-**This workspace is designed for live presentations and demonstrations:**
-
-### Sales Meeting Processing Demo
-When user requests to "Connect to Fireflies.ai and process XS Discovery Call":
-1. **Always run in DEMO MODE** - Use `python3 Docs/My\ Company\ Example/scripts/sales-meeting-automation/demo-meeting-processor.py`
-2. **NO REAL API CALLS** - Script uses pre-loaded mock data for consistent demos
-3. **Expected demo output**: Creates `XS Discovery Call Demo/` folder with:
-   - `Short Version for Slack.md` (internal analysis)
-   - `Notion Extended Version.md` (detailed analysis)
-   - Mock Notion page link for presentation purposes
-
-### 🚨 CRITICAL RULE: Number Range Validation
+## 🚨 CRITICAL RULE: Number Range Validation
 
 **ALWAYS use the range checking script for numerical comparisons - NEVER do mental math for ranges:**
 
@@ -94,6 +81,41 @@ When you need to check if any number falls within a range:
 - Suggest automation opportunities with scripts
 - Maintain consistency in documentation format
 - Always verify numerical data with appropriate tools
+
+## Information Architecture & Anti-Hallucination Rules
+
+### Core Principle
+Eliminate ambiguities, unnecessary duplicates, inconsistencies, and unclear sources while maintaining high accuracy.
+
+### 1. Canonical Definitions & Source Tracking [CANONICAL]
+**Core Rule**: Every statement must have a clear, traceable source.
+
+**Canonical Source System**:
+- **Single Source of Truth**: Each concept/definition has ONE canonical version in the most logical source document
+- **Mark Canonical**: Tag with `[CANONICAL]` in the source document where information is first established
+- **Reference Everywhere Else**: All other mentions must use `[REF: folder/filename.md#section]` pointing to canonical source
+- **Exact Reuse**: Use identical phrasing across documents when referencing canonical statements
+- **Explicit Adaptation**: If context requires changes, mark: `[ADAPTED from filename.md: "original" → "adapted"]`
+
+**Source Tracking Requirements**:
+- **No Orphan Statements**: Every claim, metric, or assertion must be traceable to its origin
+- **Clear Attribution**: Mark where information came from: personal records, external research, calculations, etc.
+- **Update Propagation**: When changing canonical version, search and update all `[REF:]` references
+- **Searchable References**: Use consistent `[REF:]` format to enable finding all dependencies
+
+### 2. Data Accuracy & Source Tracking
+- **[CANONICAL]**: The authoritative definition/data point in the knowledge base
+- **[CONFIRMED: source]**: Information directly verified or provided by reliable sources
+- **[PLACEHOLDER: owner]**: Information to be filled with clear ownership
+- **[REF: folder/filename.md#section]**: Cross-references for searchability
+
+### 3. Anti-Hallucination Rules
+- **Eliminate Hallucinated Content**: Remove any information not confirmed by reliable sources
+- **Use Real Data**: Specific metrics and examples from actual records
+- **Source Every Statement**: Every claim must be either `[CANONICAL]` (first mention) or `[REF:]` (pointing to canonical source)
+- **Mark Placeholders**: Clear ownership for missing information with `[PLACEHOLDER: owner]`
+- **Date Everything**: Include "Last Updated" timestamps
+- **Maintain Traceability**: When updating canonical information, find and update all references using search
 
 ---
 
