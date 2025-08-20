@@ -156,7 +156,7 @@ python tldv_transcripts_downloader_cli.py --date 2025-06-09
 - Flexible working hours (11:00-18:00/19:00)
 
 ## 🔧 API Configuration:
-- **API Key:** `f62b29b6-0b79-4e3c-95a1-471de4dd2cc1`
+- **API Key:** `[REMOVED FOR SECURITY]`
 - **Base URL:** `https://pasta.tldv.io/v1alpha1`
 - **Pagination:** 50 meetings per page
 - **Total meetings:** 251 meetings

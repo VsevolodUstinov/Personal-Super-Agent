@@ -1,7 +1,7 @@
 # Elly Analytics - Seed Round Pitch Deck
 *"Cursor for Performance Marketing" - Making Vibe Marketing a Reality*
 
-**Date:** December 2025  
+**Date:** September 2025  
 **Round:** Seed Funding  
 **Contact:** Seva Ustinov, CEO - seva.ustinov@ellyanalytics.com
 
@@ -386,4 +386,4 @@ AI: ✅ Rule created: Monitor lead quality by source
 
 *"Making vibe marketing a reality - where performance marketing meets natural language AI"*
 
-**Elly Analytics | Seed Round Pitch Deck | December 2025** 
+**Elly Analytics | Seed Round Pitch Deck | September 2025** 
