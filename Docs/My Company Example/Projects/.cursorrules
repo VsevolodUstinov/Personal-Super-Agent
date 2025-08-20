@@ -1,0 +1,196 @@
+# TLDV Meeting Transcripts Analysis Project
+
+## 🏗️ Project Structure
+
+### 📂 Main directories:
+- `all_meetings_transcripts/` - **FULL ARCHIVE** of all meetings from TLDV (277 meetings, 272 transcripts)
+- `updated_all_meetings/` - Previous meeting archive (251 meetings)
+- `complete_export/` - Complete meeting export (484 files)
+- `all_transcripts/` - Transcript archive (16 files)
+- `today_meetings/` - Meetings for specific days
+- `project_status/` - Project statuses (31 files for active projects)
+
+### 🛠️ Available scripts:
+
+#### 1. `tldv_incremental_downloader.py` - **MAIN SCRIPT**
+```bash
+python tldv_incremental_downloader.py --output all_meetings_transcripts
+```
+- ✅ Checks existing files
+- ✅ Downloads only new meetings (no duplicates)
+- ✅ Creates JSON and TXT files
+- ✅ Updates indexes (JSON + CSV)
+- ✅ API pagination support
+
+#### 2. `tldv_all_transcripts_downloader.py` - Full download
+```bash
+python tldv_all_transcripts_downloader.py --output all_transcripts
+```
+
+#### 3. `tldv_transcripts_downloader_cli.py` - By date
+```bash
+python tldv_transcripts_downloader_cli.py --date 2025-06-09
+```
+
+### 📊 Index files:
+- `all_meetings_transcripts/meetings_index.json` - Full meeting index with metadata
+- `all_meetings_transcripts/meetings_index.csv` - CSV version for quick search
+
+## 🔍 Meeting Transcript Analysis
+
+**IMPORTANT RULE:** Analysis of meeting text and transcripts SHOULD NOT be conducted by automatic scripts.
+
+### ✅ Correct approach:
+1. **Loading via AI assistant**: Meeting transcripts should be loaded and analyzed by AI assistant (Claude/GPT) directly
+2. **Interactive analysis**: User can ask AI to analyze specific meetings, asking questions like:
+   - "Analyze the meeting from [date] and highlight key decisions"
+   - "Find action items from meeting [name]"
+   - "Summarize main discussion topics"
+   - "Find meeting with [name] and analyze communication"
+
+### ❌ Avoid:
+- Automatic text analysis scripts
+- Mass processing without context
+- Predefined analysis templates
+
+### 📁 File structure for analysis:
+- **JSON files** contain full meeting data with metadata
+- **TXT files** convenient for quick reading by AI assistant
+- **CSV index** helps find needed meeting
+
+## 🏷️ Information Source Tagging System
+
+### 📋 Required tags for project_status/ files:
+
+#### `[MEETING:YYYY-MM-DD]` - Information from specific meeting
+- **Format:** `[MEETING:2025-06-09]` - Manager1 internal meetings client1 client2 client3
+- **Usage:** Specify date and meeting name from transcripts
+- **Example:** `[MEETING:2025-06-23]` - client1-elly internal
+
+#### `[PORTFOLIO:STATUS]` - Information from project portfolio
+- **Options:** `[PORTFOLIO:ACTIVE]`, `[PORTFOLIO:INACTIVE]`
+- **Usage:** Project status in general portfolio
+- **Example:** `[PORTFOLIO:ACTIVE]` - Status from active projects portfolio
+
+#### `[STATUS:TYPE]` - Special project statuses
+- **Options:** `[STATUS:LAUNCH]`, `[STATUS:SUPPORT]`, `[STATUS:DEVELOPMENT]`
+- **Usage:** Current project stage
+- **Example:** `[STATUS:LAUNCH]` - Project in launch stage
+
+#### `[ANALYSIS:SOURCE]` - Analytical conclusions
+- **Options:** `[ANALYSIS:INFERRED]`, `[ANALYSIS:INDUSTRY]`, `[ANALYSIS:TECHNICAL]`
+- **Usage:** Information derived from analysis
+- **Example:** `[ANALYSIS:INFERRED]` - E-commerce and Shopify specifics
+
+#### `[CLIENT:TYPE]` - Information from client
+- **Options:** `[CLIENT:DIRECT]`, `[CLIENT:FEEDBACK]`, `[CLIENT:REQUIREMENT]`
+- **Usage:** Direct information from client
+- **Example:** `[CLIENT:DIRECT]` - Currency logic requirements
+
+### 📝 Tag usage rules:
+
+1. **Mandatory**: Each file in `project_status/` must contain section `## 🏷️ Information Sources`
+2. **Date accuracy**: Use exact meeting dates from transcript files
+3. **Multiple sources**: Can specify multiple tags for one project
+4. **Updates**: When adding new information, add corresponding tag
+5. **Traceability**: Each fact must have a source
+
+### 💡 Correct usage examples:
+```markdown
+## 🏷️ Information Sources
+- `[MEETING:2025-06-09]` - Manager1 internal meetings client1 client2 client3
+- `[MEETING:2025-06-23]` - client1-elly internal
+- `[ANALYSIS:TECHNICAL]` - Credit products with return lags
+- `[STATUS:SUPPORT]` - Active project support
+```
+
+### 🤖 Analysis workflow:
+1. User specifies which meeting to analyze
+2. AI assistant loads corresponding transcript file
+3. AI conducts analysis considering context and specific user questions
+4. Result provided in understandable format
+
+### 💡 Example commands for user:
+```
+"Analyze meeting 'Manager2 / Manager3 / Manager4 | Marketing analyst'"
+"Find all mentions of Client4 project in May meetings"
+"Create summary of meetings with Client5"
+"Find Manager1 and Manager3 meeting from yesterday and highlight tasks"
+"Analyze communication with Elly on Client1 project"
+```
+
+## 📈 Project Portfolio (34 projects)
+
+### 🟢 Active projects (29):
+
+#### FinTech/Trading (36%):
+- Client6, Client7, Client8, Client9
+- Client1, Client10, Client11, Client12, Client13
+- Client14, Client15
+
+#### Gaming:
+- Client16, Client17
+
+#### E-commerce/Healthcare:
+- Client18, Client19, Client20, Client21
+
+#### Real Estate/Services:
+- Client22, Client23, Client24
+- Client25, Client26, Client27
+
+#### Automotive/Logistics:
+- Client28, Client29
+
+#### QA/Food/Media:
+- Client30, Client31, Client32
+
+#### Special:
+- Client33 (in launch stage)
+
+### 🔴 Inactive projects (5):
+- Client34, Client35, Client36, Client37, Client38
+
+### 👥 Analytics team (8 people):
+- Various project load distribution
+- International clients (USA, Europe, Saudi Arabia)
+- Flexible working hours (11:00-18:00/19:00)
+
+## 🔧 API Configuration:
+- **API Key:** `[REMOVED FOR SECURITY]`
+- **Base URL:** `https://pasta.tldv.io/v1alpha1`
+- **Pagination:** 50 meetings per page
+- **Total meetings:** 251 meetings
+
+## 📋 Project statistics:
+- **Total meetings:** 277
+- **Downloaded transcripts:** 272
+- **No transcripts:** 4
+- **Download errors:** 1
+- **Active projects:** 29
+- **Inactive projects:** 5
+- **Project status files:** 31
+
+## 🎯 Usage workflow:
+
+### For downloading new meetings:
+```bash
+python tldv_incremental_downloader.py
+```
+
+### For meeting analysis:
+1. Find meeting in `meetings_index.csv`
+2. Load corresponding TXT file
+3. Conduct analysis via AI assistant
+4. Update project status in `project_status/` if needed
+
+### For meeting search:
+- Use `grep` on TXT files
+- Search by CSV index
+- Filter by dates/participants
+
+This approach ensures:
+- ✅ Contextual analysis
+- ✅ Flexibility in asking questions  
+- ✅ Quality insights
+- ✅ Avoiding false positives from automation
+- ✅ Effective project portfolio management
