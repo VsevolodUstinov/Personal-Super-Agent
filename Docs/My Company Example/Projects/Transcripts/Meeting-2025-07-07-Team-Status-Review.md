@@ -1,136 +1,105 @@
-# Processed Meeting Transcript - 2025-07-07 - Team Status Review
+# Team Meeting Transcript - Project Status Review
 
-## Metadata
-- Date: 2025-07-07
-- Participants: Manager1, Manager2, Manager3, Manager4, Specialist1, Specialist2
-- Original source: tldv.io
-- Type: Team meeting on project statuses
-
-## Project Discussion (anonymized)
-
-### Client-Logistics (formerly Client-Logistics)
-- **Status**: 🔴 Critical issues with data access
-- **Problems/Tasks**: 
-  - No access to client database
-  - Client team not responding to requests
-  - Approval cycle challenges
-  - Technical implementation blocked
-- **Business Impact**:
-  - Project timeline completely uncertain
-  - Resource allocation affected
-  - Client relationship requires escalation
-- **Required Actions**: Escalate to senior management level
-- **Result**: Critical blocker requiring immediate intervention
-
-### Client-Beauty2 (formerly Client-Beauty2)
-- **Status**: 🔄 Active development with multiple ongoing tasks
-- **Updates**:
-  - LTV integration in development phase
-  - Additional order metrics being implemented
-  - Unknown source analysis in progress
-  - Custom analytics framework being built
-- **Technical Progress**:
-  - Basic analytics structure established
-  - Data flow architecture designed
-  - Custom metrics framework in development
-- **Next Steps**: Continue development of core features
-- **Result**: Steady progress toward comprehensive analytics platform
-
-### Client-Beauty1 (formerly Client-Beauty1)
-- **Status**: ⏸️ On hold - awaiting client migration
-- **Updates**:
-  - Still waiting for client's Shopify migration completion
-  - Technical implementation 95% ready
-  - All systems prepared for post-migration activation
-  - Regular client communication maintained
-- **Technical Status**:
-  - Integration architecture complete
-  - Data tracking mechanisms ready
-  - Dashboard framework prepared
-- **Dependencies**: External client platform migration
-- **Result**: Technically ready, timeline dependent on client
-
-### Client-Food (formerly Client-Food)
-- **Status**: ✅ Stable development with good progress
-- **Updates**:
-  - Core analytics features being implemented
-  - Dashboard development advancing
-  - Operations team engagement increasing
-  - Delivery tracking capabilities being built
-- **Technical Achievements**:
-  - Basic food delivery analytics functional
-  - Real-time tracking framework established
-  - Operations dashboard in development
-- **Next Steps**: Complete dashboard and begin user training
-- **Result**: Strong progress toward operational deployment
-
-### Client-EdTech (formerly Client-EdTech)
-- **Status**: 🚀 Early development phase
-- **Updates**:
-  - Project scope and requirements being defined
-  - Educational analytics framework being designed
-  - Initial user behavior tracking concepts
-  - OnPremises deployment planning
-- **Technical Planning**:
-  - Educational sector requirements analysis
-  - Student journey mapping framework
-  - Learning analytics capabilities definition
-- **Next Steps**: Complete technical architecture and begin implementation
-- **Result**: Foundation phase with clear direction
-
-## Meeting Summary
-
-### Project Portfolio Status
-- **5 active projects** across multiple industry verticals
-- **Mixed progress levels** from early development to near completion
-- **One critical blocker** requiring escalation (Logistics)
-- **Strong technical foundation** being built across multiple sectors
-
-### Industry Diversification
-- **Beauty & Health**: 2 projects with different implementation approaches
-- **Food Delivery**: Operational analytics focus
-- **Education**: Learning and student analytics
-- **Logistics**: Transportation and delivery (blocked)
-
-### Technical Patterns
-- **Analytics platforms**: Common framework across all projects
-- **Dashboard development**: User interface focus for operations teams
-- **Real-time tracking**: Live data processing capabilities
-- **Custom metrics**: Industry-specific measurement requirements
-
-### Key Challenges
-- **Client dependencies**: External factors affecting timeline (Beauty1)
-- **Access issues**: Database and system connectivity problems (Logistics)
-- **Resource allocation**: Balancing development across multiple projects
-- **Industry expertise**: Building sector-specific knowledge
-
-### Success Indicators
-- **Multi-industry portfolio**: Demonstrating platform versatility
-- **Technical progress**: Consistent development across projects
-- **Client engagement**: Active participation from operations teams
-- **Foundation building**: Establishing scalable frameworks
-
-## Action Items for Next Period
-1. **Escalate Logistics issues**: Involve senior management in client access resolution
-2. **Continue Beauty2 development**: Advance LTV integration and custom metrics
-3. **Monitor Beauty1 migration**: Weekly check-ins on client platform progress
-4. **Advance Food operations**: Complete dashboard development and user preparation
-5. **Define EdTech scope**: Finalize requirements and technical architecture
-
-## Risk Assessment
-- **High-risk**: Logistics project due to client access issues
-- **Medium-risk**: Beauty1 due to external dependency timeline
-- **Low-risk**: Beauty2, Food, EdTech showing steady progress
-
-## Business Development Notes
-- **Portfolio diversity**: Strong representation across multiple verticals
-- **Implementation expertise**: Building sector-specific capabilities
-- **Scalable framework**: Common technical foundation across projects
-- **Client relationship management**: Need for escalation protocols
+**Date:** 07/07/2025  
+**Participants:** Manager 1, Analyst 1, Developer 1, Manager 2
 
 ---
 
-**Meeting Duration**: 40 minutes  
-**Next Review**: 2025-07-14  
-**Action Items Owner**: Project Management Team  
-**Portfolio Health**: 4 of 5 projects progressing well
+**Manager 1:** Hi everyone! Let's review our projects. I'll start with Client-Logistics. They finally have updates. They've deployed ads on two systems - Google and LinkedIn. They're not giving us access yet, but [Name] promised to provide access.
+
+**Analyst 1:** Yes, I looked at what's happening with them. On Google they launched YouTube ads, but there's an issue - the video doesn't lead anywhere. There's only a mention to visit and subscribe to their account. No direct links at all.
+
+**Manager 1:** They're super worried about moderation. The point is - they're running these ads now, and unfortunately for now it will drive traffic as direct or organic, because no links are provided anywhere.
+
+**Developer 1:** What about their LinkedIn?
+
+**Manager 1:** On LinkedIn they launched two campaigns. Inside the first one there are two tests. Both lead not to the website, but to booking through Calendly for a call with a manager. The problem is they don't have UTM tracking in Calendly.
+
+**Analyst 1:** According to them, they tried, but it didn't work. Do we have any other experience with this?
+
+**Manager 1:** We suggested that other clients have different onboarding formats. Through fillout, MarketWhiz, whatever. And you can put tracking there. They said they'll think about it, but don't want to for now.
+
+**Developer 1:** Can they drive people to the website and give them a "Book a demo" button there?
+
+**Manager 1:** Not yet. They're trying their best not to drive to the website because all their accounts got blocked before.
+
+**Analyst 1:** What else will they have besides Google and LinkedIn?
+
+**Manager 1:** There will also be Facebook. Facebook will launch through a partner account. For Facebook they're ready to install our script, set up cross-domain tracking and put a tagged link on the button.
+
+**Manager 2:** Do partners allow them to install third-party scripts?
+
+**Manager 1:** From what their CEO said - yes. I think he hasn't talked to partners yet. We connected [Name] and [Name] there, they said okay, but only CEO has control.
+
+**Analyst 1:** Good. Moving on to Client-Beauty1?
+
+**Manager 2:** Yes, about Client-Beauty1. We implemented customer attribution logic as they needed. [Name] created a document, we put it in Notion. We'll need to clarify if they have questions about this. We cleaned up other, meaning unknown. Everything in the report got better.
+
+**Developer 1:** Regarding influencers and promo codes - everything's good, everything's available in the report. The client complained that our update on the 5th didn't work, but I highlighted it and ran it manually.
+
+**Analyst 1:** How are things with hashes?
+
+**Developer 1:** I checked several times in different windows. Hashes work everywhere. Phone number and email are saved everywhere. I went to their test site - everything's correct.
+
+**Manager 2:** Where does the Google Client ID tracking break? They have an issue with pass-through.
+
+**Developer 1:** I can't say the specific place where Google Client ID might break now. Need to look separately, I'll add a task to check hooks on all website pages.
+
+**Analyst 1:** Okay, what about Client-Beauty2?
+
+**Developer 1:** We still have the issue that the script doesn't cover all email input forms. There was an issue where Google Client ID wasn't passed through normally, but the paradox is that as soon as we reinstalled the app, the pass-through percentage dropped.
+
+**Manager 1:** Why is that?
+
+**Developer 1:** Because before, static coefficients were written to null Google Client ID fields. After the fix, all null Google Client ID values started coming with zero. The percentage dropped because of this.
+
+**Analyst 1:** Not exactly. He fixed it and now it should be better. I deployed the fix on Friday, we can check today or tomorrow.
+
+**Manager 1:** What do we do about UTMs?
+
+**Developer 1:** UTMs are on me. Need to research how the mechanism works inside Shopify, how it determines UTM tags. This will take time.
+
+**Manager 2:** What about consent mode and banner? Wouldn't it be easier to transfer the task to [Name]?
+
+**Developer 1:** We transferred the task to [Name], he gave it back. This needs to be configured on the client side and rolled out to all European countries.
+
+**Analyst 1:** Moving on to Client-Food?
+
+**Manager 1:** About Client-Food - this week Monday they'll have Moldova, Wednesday will be Romania, Shopify data. After that we can start installing the script with hashes.
+
+**Developer 1:** They also have a question about separating Romania and Moldova countries within the report. [Name] isn't sure they'll have one Shopify for two countries.
+
+**Manager 1:** I think it will be one. When they launch in Europe, will they have 20 Shopify stores? That's nonsense. Most likely we'll filter orders by tags.
+
+**Analyst 1:** What about Client-EdTech?
+
+**Manager 2:** We have 17% unknown revenue according to their data, and it's unclear how to fix this, even after Client ID pass-through.
+
+**Developer 1:** What percentage was it at launch?
+
+**Manager 2:** I think it was slightly less. Looking now - in December it was 9%, now it's 17%.
+
+**Analyst 1:** They're catching some users who extend subscriptions from 2021 that we don't know anything about.
+
+**Manager 2:** We can make an export of these contacts and tell them - we don't know where they came from. No Client IDs, no UTMs, nothing was written to them. We need to solve this question together.
+
+**Developer 1:** We can try to look at contacts from June that are in unknown, try to find their events in Google through hash.
+
+**Analyst 1:** Good. And the last one - Client-Logistics (additional project)?
+
+**Manager 1:** About Client-Logistics (additional project) - they wrote to me that they have holidays, almost another month. But accordingly she gave us access to adjust, to all systems. Now publishing script, plus they published QR codes and unique client IDs are generated there.
+
+**Developer 1:** Can't deploy server yet because of holidays?
+
+**Manager 1:** Yes, but there's progress. These are the main updates.
+
+**Manager 2:** Good, that's all from me. If there are no questions, let's finish here.
+
+**Analyst 1:** Great, see you next week.
+
+**Manager 1:** Yes, let's meet Thursday at the same time. Thanks everyone!
+
+---
+
+**Meeting Duration:** 45 minutes  
+**Next Meeting Date:** 14/07/2025
