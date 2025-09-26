@@ -1,0 +1,16 @@
+Accesse recieved,Ad sources / services,Type,Access level,Priority,Account id,Timezone,Currency,What should be done,Where should we get an access,Instructions,Comments,Blocking Reason
+TRUE,Google Analytics,Interface,Admin,CRITICAL,PROPERTY ID: 1234567890,GMT,—,Share the access to email,client.accesses@ellyanalytics.com,Instruction,"Granted, user-level",
+TRUE,BigQuery,Interface,Admin,CRITICAL,—,—,—,Share the access to your BigQuery for our Business Manager according to the instruction.,client.accesses@ellyanalytics.com,Instruction,,
+TRUE,*BigQuery,Access token,—,CRITICAL,—,—,—,Prepare access token according with instruction,—,Instruction,,
+TRUE,GTM,,,CRITICAL,,,,,,,,
+TRUE,Google Ads,Interface,Standard level,CRITICAL,,,,Share the access to email,client.accesses@ellyanalytics.com,Instruction,,
+TRUE,*Google Ads,Access token,—,CRITICAL,,,,Share the access to email,—,Instruction,Please create the access token for each Google Ads account if you have several,
+FALSE,Facebook,Interface + access,Standard level,HIGH,,,,Share the access to your Ad Account for our Business Manager according to the instruction,Share the Partner access,Instruction,Please share the access to our Business Manager to each Facebook Ad Account if you have several,"Admin left company, need new Business Manager owner"
+FALSE,Tiktok,Interface,Standard level,LOW,,,,Share the access to email,client.accesses@ellyanalytics.com,Instruction,client.accesses@ellyanalytics.com,"Client doesn't have TikTok Ads account yet, setting up"
+FALSE,*Tiktok,Access token,—,LOW,,,,Provide us with the login and token for the account. Get the token according to the instruction.,—,Instruction,Please create the access token for each TikTok account if you have several,"Client doesn't have TikTok Ads account yet, setting up"
+TRUE,Microsoft Ads,Interface,Standard level,MEDIUM,,,,Share the access to email,client.accesses@ellyanalytics.com,Instruction,,
+TRUE,*Microsoft Ads,Access token,—,MEDIUM,,,,Provide us with the login and token for the account. Get the token according to the instruction.,—,Instruction,Please create the access token for each BingAds account if you have several,
+FALSE,Shopify,Interface,Standard level,HIGH,,,,Share the access to the interface according to the instruction,client.accesses@ellyanalytics.com,Instruction,,Waiting for client to install our tracking app
+FALSE,*Shopify,Access token,—,HIGH,,,,Create the API access token according to the instruction,—,Instruction,client.accesses@ellyanalytics.com,Client concerned about API permissions scope
+TRUE,Hubspot,Interface,Standard level,MEDIUM,,,,Share the access to email,client.accesses@ellyanalytics.com,,client.accesses@ellyanalytics.com,
+TRUE,*Hubspot,Application,—,MEDIUM,,,,Provide us with the login and token for the account. Get the token according to the instruction.,—,Instruction,,

@@ -76,7 +76,38 @@ Prompt:
 - Gather positive highlights: what clients noticed about using Elly on calls
 - Find all competitor mentions or comparisons on calls and what clients said
 
-Next step: “This entire workflow can be automated.”
+Next step: "This entire workflow can be automated."
+
+## 🎯 DEMO 3: Executive meeting analysis — detailed insights (4 min)
+
+### Step 1: Analyze client meeting transcript
+
+Prompt:
+
+> "Analyze the latest proptech client meeting transcript and answer the following questions:
+> - What specific agreements were reached regarding changes to the client's data processing workflow?
+> - Who is responsible for their implementation?
+> - Whether the client remained satisfied after the end of the call?"
+
+**📁 Folder**: `Docs/My Company Example/Projects/Fireflies-Transcripts/`
+
+How it works:
+- Takes complex meeting transcripts and extracts key business decisions
+- Identifies responsibilities and action items with specific owners
+- Assesses client satisfaction and relationship health
+- Creates structured analysis for executive review
+
+### Expected results:
+- ✅ Executive summary of key agreements and responsibilities
+- ✅ Clear breakdown of workflow changes (5-field to 3-field schema)
+- ✅ Identification of external dependencies and risks
+- ✅ Action items with assigned owners and timelines
+
+### Why this matters for business:
+- No more "who said what" confusion after important client calls
+- Clear accountability and next steps
+- Risk identification before problems escalate
+- Executive-level insights without manual analysis
 
 ## 🚀 Getting started (tabs, screenshots, github, rules) (2 min)
 

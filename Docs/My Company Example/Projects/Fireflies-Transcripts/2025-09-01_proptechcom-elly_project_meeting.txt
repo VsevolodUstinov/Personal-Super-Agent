@@ -1,4 +1,4 @@
-# client.com-elly: project meeting
+# proptech.com-elly: project meeting
 Date: 2025-09-01 13:00
 Duration: 16.950000762939453 min
 Participants: client@clientmail.com,client2@clientmail.com,elly.analyst@ellyanalytics.com,elly.manager@ellyanalytics.com,elly.manager2@ellyanalytics.com,fred@fireflies.ai
